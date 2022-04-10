@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <title>Fetch Example</title>
+        <meta charset=UTF-8>
+    </head>
+    <body>
+        <pre id="output">Fetching...</pre>
+    </body>
+    <script defer>
+    let output_tag = document.getElementById('output')
+
+    fetch('https://swapi.dev/api/planets/1/')
+        .then(response => response.json()) // convert response into JS object
+        .then(obj => JSON.stringify(obj, null, 2)) // format object into string
+        .then(str => output_tag.innerHTML = str) // display string on page
+    </script>
+</html>
